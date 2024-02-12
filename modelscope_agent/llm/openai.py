@@ -37,7 +37,7 @@ class OpenAi(BaseChatModel):
             stop=stop,
             stream=True,
             **kwargs)
-        # TODO: error handling
+        # TODO: error handling 
         for chunk in response:
             if hasattr(chunk.choices[0].delta, 'content'):
                 yield chunk.choices[0].delta.content
